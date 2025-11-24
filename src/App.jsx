@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./App.css";
 
 const LOGO = "yallaLogo.jpg";
@@ -12,17 +12,45 @@ const RUNNERS = [
   "/runner2.jpg",
 ];
 
+function useScrollReveal(selector = ".reveal", options = {}) {
+  useEffect(() => {
+    const els = Array.from(document.querySelectorAll(selector));
+    if (!els.length) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, ...options }
+    );
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, [selector, options]);
+}
+
 export default function App() {
+  // apply scroll reveal to sections and cards
+  useScrollReveal(".reveal");
+
+  // duplicate images for seamless marquee
+  const marqueeImages = [...RUNNERS, ...RUNNERS];
+
+  // refs for pause on hover (optional)
+  const marqueeRef = useRef(null);
+
   return (
     <div className="site">
-
       {/* NAV */}
       <header className="nav">
         <div className="nav-left">
-          <img src={LOGO} alt="logo" className="nav-logo" />
+          <img src={LOGO} alt="YALLA logo" className="nav-logo" />
         </div>
 
-        <nav className="nav-right">
+        <nav className="nav-right" aria-label="Main navigation">
           <a href="#about">About</a>
           <a href="#run">Run</a>
           <a href="#partners">Partners</a>
@@ -30,25 +58,35 @@ export default function App() {
         </nav>
       </header>
 
-      {/* HERO C: Giant YALLA + runner strip */}
+      {/* HERO (100vh) */}
       <section className="hero">
         <div className="hero-inner">
           <h1 className="hero-title">YALLA</h1>
+          <p className="hero-sub">Adventure and connection</p>
 
-          <p className="hero-sub">
-            Adventure and connection
-          </p>
-
-          <div className="hero-strip">
-            <img src={RUNNERS[0]} alt="runner strip" className="hero-strip-img" />
+          {/* thin film-strip: marquee */}
+          <div
+            className="film-strip"
+            onMouseEnter={() => marqueeRef.current && (marqueeRef.current.style.animationPlayState = "paused")}
+            onMouseLeave={() => marqueeRef.current && (marqueeRef.current.style.animationPlayState = "running")}
+          >
+            <div
+              className="film-track"
+              ref={marqueeRef}
+              style={{ ["--items"]: marqueeImages.length }}
+              aria-hidden="true"
+            >
+              {marqueeImages.map((src, i) => (
+                <div key={i} className="film-frame" style={{ backgroundImage: `url(${src})` }} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* ABOUT + MOSAIC */}
-      <section id="about" className="about-section">
+      <section id="about" className="about-section reveal">
         <div className="about-inner">
-
           <div className="about-left">
             <h2 className="section-title">Where active spirits come alive.</h2>
 
@@ -63,7 +101,6 @@ export default function App() {
             </p>
           </div>
 
-          {/* Modern magazine mosaic */}
           <div className="mosaic">
             <div className="mosaic-col">
               <div className="mosaic-item tall" style={{ backgroundImage: `url(${RUNNERS[1]})` }} />
@@ -78,14 +115,12 @@ export default function App() {
               </div>
             </div>
           </div>
-
         </div>
       </section>
 
       {/* WEEKLY RUN + ROUTE */}
-      <section id="run" className="run-section">
+      <section id="run" className="run-section reveal">
         <div className="run-inner">
-
           <div className="run-block">
             <h2 className="section-title red">Weekly Run</h2>
             <p className="body-text muted">Every Sunday • Same time • Same route</p>
@@ -108,7 +143,7 @@ export default function App() {
       </section>
 
       {/* PARTNERS */}
-      <section id="partners" className="partners-section">
+      <section id="partners" className="partners-section reveal">
         <div className="partners-inner">
           <h2 className="section-title red">Partners</h2>
 
@@ -124,7 +159,7 @@ export default function App() {
       </section>
 
       {/* COMMUNITY */}
-      <section id="community" className="community-section">
+      <section id="community" className="community-section reveal">
         <div className="community-inner">
           <h2 className="section-title red">Community</h2>
           <p className="body-text">
@@ -140,7 +175,7 @@ export default function App() {
 
           <div className="join-row">
             <a href="#" className="join primary">Join WhatsApp</a>
-            <a href="#" className="join secondary">Strava Club</a>
+            <a href="#" className="join secondary">Join Strava</a>
           </div>
         </div>
       </section>
@@ -153,7 +188,6 @@ export default function App() {
           <a href="#">Strava</a>
         </div>
       </footer>
-
     </div>
   );
 }
