@@ -54,9 +54,9 @@ export default function App() {
         </div>
 
         <nav className="nav-right" aria-label="Main navigation">
-          <a href="#about">About</a>
+          {/* <a href="#about">About</a>
           <a href="#run">Run</a>
-          <a href="#partners">Partners</a>
+          <a href="#partners">Partners</a> */}
           <a href="#community" className="nav-cta">Join</a>
         </nav>
       </header>
