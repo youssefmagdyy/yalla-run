@@ -3,6 +3,9 @@ import "./App.css";
 
 const LOGO = "yallaLogo.jpg";
 
+
+const CAFE = "cafeLogo.jpg"
+
 const RUNNERS = [
   "/runner1.jpg",
   "/runner2.jpg",
@@ -148,9 +151,9 @@ export default function App() {
           <h2 className="section-title red">Partners</h2>
 
           <div className="partner">
-            <div className="partner-img" style={{ backgroundImage: `url(${RUNNERS[2]})` }} />
+            <div className="partner-img" style={{ backgroundImage: `url(${CAFE})` }} />
             <div className="partner-info">
-              <h3 className="partner-name">Café Compagnon</h3>
+              <h3 className="partner-name">Flâneur Coffee Club</h3>
               <p className="body-text muted">10 percent off for YALLA members. Just say you're with the club.</p>
               <a href="#" className="partner-link">View on Instagram</a>
             </div>

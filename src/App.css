@@ -147,7 +147,7 @@ a{text-decoration:none;color:inherit}
 /* PARTNERS */
 .partners-section{padding-top:64px;padding-bottom:64px}
 .partner{display:flex;gap:28px;align-items:center;margin-top:18px}
-.partner-img{width:420px;height:260px;background-size:cover;background-position:center;border-radius:6px}
+.partner-img{width:210px;height:130px;background-size:cover;background-position:center;border-radius:6px}
 .partner-name{margin:0;font-size:26px;font-weight:900}
 .partner-link{margin-top:10px;display:inline-block;color:var(--red);font-weight:800}
 .partner-info .body-text{margin:8px 0}
