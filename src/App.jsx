@@ -93,14 +93,12 @@ export default function App() {
             <a href="https://www.instagram.com/yalla.adeef?igsh=MXJpajRyandwNnNjZg==" className="join secondary">Instagram</a>
             <a href="https://www.strava.com/clubs/1833378" className="join secondary">Strava</a>
           </div>
-        </div>
-      </section>
- 
-       <section id="about" className="about-section reveal">
-        <div className="about-inner">
-          <div className="about-left">
-            <h2 className="section-title red">Our Gallery</h2>
-            <div
+
+          {/* thin film-strip: marquee */}
+          <p className="section-title red">
+           Our Gallery
+          </p>
+          <div
             className="film-strip"
             onMouseEnter={() => marqueeRef.current && (marqueeRef.current.style.animationPlayState = "paused")}
             onMouseLeave={() => marqueeRef.current && (marqueeRef.current.style.animationPlayState = "running")}
@@ -116,6 +114,23 @@ export default function App() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+       <section id="about" className="about-section reveal">
+        <div className="about-inner">
+          <div className="about-left">
+            <h2 className="section-title red">Who are we</h2>
+
+            <p className="body-text">
+              Whether you run, hike, climb, or whatever gets you pushing forward:
+              Yalla is your community for adventure and connection.
+            </p>
+
+            <p className="body-text muted">
+              Born in Paris with Egyptian roots, YALLA brings creatives and athletes
+              together for weekly movement, exploration, and shared experiences.
+            </p>
           </div>
         </div>
       </section>
