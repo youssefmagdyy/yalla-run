@@ -64,11 +64,43 @@ export default function App() {
       {/* HERO (100vh) */}
       <section className="hero">
         <div className="hero-inner">
-          <h1 className="hero-title">YALLA</h1>
-          <p className="hero-sub">Adventure and connection</p>
+          <h1 className="hero-title">YALLA?</h1>
+          {/* <p className="hero-sub">Adventure and connection</p> */}
+        </div>
+      </section>
 
-          {/* thin film-strip: marquee */}
-          <div
+      
+      {/* COMMUNITY */}
+      <section id="community" className="community-section reveal">
+        <div className="community-inner">
+          {/* <h2 className="section-title red">Community</h2> */}
+          <p className="body-text">
+           Yalla pick your sport!
+          </p>
+          <div className="chip-row">
+            <span className="chip">Running</span>
+            <span className="chip">Hiking</span>
+            <span className="chip">Kora</span>
+            <span className="chip">Climbing</span>
+            <span className="chip">Cycling</span>
+            <span className="chip">Padel</span>
+          </div>
+          <p className="body-text">
+           STEP 2. Connect with us
+          </p>
+          <div className="join-row">
+            <a href="https://chat.whatsapp.com/GBkoXP74vx73PNGCyxR5sV" className="join secondary">WhatsApp</a>
+            <a href="https://www.instagram.com/yalla.adeef?igsh=MXJpajRyandwNnNjZg==" className="join secondary">Instagram</a>
+            <a href="https://www.strava.com/clubs/1833378" className="join secondary">Strava</a>
+          </div>
+        </div>
+      </section>
+ 
+       <section id="about" className="about-section reveal">
+        <div className="about-inner">
+          <div className="about-left">
+            <h2 className="section-title red">Our Gallery</h2>
+            <div
             className="film-strip"
             onMouseEnter={() => marqueeRef.current && (marqueeRef.current.style.animationPlayState = "paused")}
             onMouseLeave={() => marqueeRef.current && (marqueeRef.current.style.animationPlayState = "running")}
@@ -84,14 +116,56 @@ export default function App() {
               ))}
             </div>
           </div>
+          </div>
         </div>
       </section>
 
-      {/* ABOUT + MOSAIC */}
+      {/* WEEKLY RUN + ROUTE */}
+      <section id="run" className="run-section reveal">
+        <div className="run-inner">
+          <div className="run-block">
+            <h2 className="section-title red">Weekly Run</h2>
+            <p className="body-text">Ready? Steady.. Yalla!</p>
+            {/* <p className="body-text muted">Every Saturday • Same time • Same place</p> */}
+            <ul className="info-list">
+              <li>Saturdays</li>
+              <li> 10:00 AM</li>
+              <li>@FCC </li>
+              <li>4 km loop</li>
+              <li>All levels welcome</li>
+            </ul>
+          </div>
+
+          {/* <div className="route-block">
+            <h2 className="section-title red">Route</h2>
+            <p className="body-text muted">YALLA Sunday Loop — scenic and social.</p>
+
+            <div className="route-map">Map coming soon</div>
+          </div> */}
+        </div>
+      </section>
+
+      {/* PARTNERS */}
+      <section id="partners" className="partners-section reveal">
+        <div className="partners-inner">
+          <h2 className="section-title red">Shoutout</h2>
+
+          <div className="partner">
+            <div className="partner-img" style={{ backgroundImage: `url(${CAFE})` }} />
+            <div className="partner-info">
+              <h3 className="partner-name">Flâneur Coffee Club</h3>
+              {/* <p className="body-text muted">10 percent off for YALLA members. Just say you're with the club.</p> */}
+              <a href="#" className="partner-link">Instagram</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+       {/* ABOUT + MOSAIC */}
       <section id="about" className="about-section reveal">
         <div className="about-inner">
           <div className="about-left">
-            <h2 className="section-title">Where active spirits come alive.</h2>
+            <h2 className="section-title red">Who are we</h2>
 
             <p className="body-text">
               Whether you run, hike, climb, or whatever gets you pushing forward:
@@ -104,7 +178,7 @@ export default function App() {
             </p>
           </div>
 
-          <div className="mosaic">
+          {/* <div className="mosaic">
             <div className="mosaic-col">
               <div className="mosaic-item tall" style={{ backgroundImage: `url(${RUNNERS[1]})` }} />
               <div className="mosaic-item" style={{ backgroundImage: `url(${RUNNERS[2]})` }} />
@@ -117,69 +191,7 @@ export default function App() {
                 <div className="mosaic-item" style={{ backgroundImage: `url(${RUNNERS[5]})` }} />
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* WEEKLY RUN + ROUTE */}
-      <section id="run" className="run-section reveal">
-        <div className="run-inner">
-          <div className="run-block">
-            <h2 className="section-title red">Weekly Run</h2>
-            <p className="body-text muted">Every Sunday • Same time • Same route</p>
-
-            <ul className="info-list">
-              <li><strong>When:</strong> Sundays 10:00</li>
-              <li><strong>Meet:</strong> Canal Saint-Martin (east bridge)</li>
-              <li><strong>Distance:</strong> ~7 km loop</li>
-              <li><strong>Vibe:</strong> All levels welcome</li>
-            </ul>
-          </div>
-
-          <div className="route-block">
-            <h2 className="section-title red">Route</h2>
-            <p className="body-text muted">YALLA Sunday Loop — scenic and social.</p>
-
-            <div className="route-map">Map coming soon</div>
-          </div>
-        </div>
-      </section>
-
-      {/* PARTNERS */}
-      <section id="partners" className="partners-section reveal">
-        <div className="partners-inner">
-          <h2 className="section-title red">Partners</h2>
-
-          <div className="partner">
-            <div className="partner-img" style={{ backgroundImage: `url(${CAFE})` }} />
-            <div className="partner-info">
-              <h3 className="partner-name">Flâneur Coffee Club</h3>
-              <p className="body-text muted">10 percent off for YALLA members. Just say you're with the club.</p>
-              <a href="#" className="partner-link">View on Instagram</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* COMMUNITY */}
-      <section id="community" className="community-section reveal">
-        <div className="community-inner">
-          <h2 className="section-title red">Community</h2>
-          <p className="body-text">
-            Running, hiking, climbing, cycling — movement meets connection.
-          </p>
-
-          <div className="chip-row">
-            <span className="chip">Running</span>
-            <span className="chip">Hiking</span>
-            <span className="chip">Climbing</span>
-            <span className="chip">Cycling</span>
-          </div>
-
-          <div className="join-row">
-            <a href="#" className="join primary">Join WhatsApp</a>
-            <a href="#" className="join secondary">Join Strava</a>
-          </div>
+          </div> */}
         </div>
       </section>
 
