@@ -81,7 +81,7 @@ a{text-decoration:none;color:inherit}
 }
 
 /* ABOUT */
-.about-section{padding: 30px 60px 80px 60px;}
+.about-section{padding: 30px 40px 80px 40px;}
 
 .about-inner{
   display:grid;
@@ -139,7 +139,7 @@ a{text-decoration:none;color:inherit}
 }
 
 /* PARTNERS */
-.partners-section{padding: 30px 60px;}
+.partners-section{padding: 30px 40px;}
 .partners-list{display: flex; justify-content: start; gap: 50px;}
 .partner{display:flex;flex-direction:column;gap:4px;align-items:center;margin-top:18px}
 .partner-img{width:150px;height:150px;}
@@ -165,7 +165,7 @@ a{text-decoration:none;color:inherit}
 
 
 /* FILM STRIP (marquee) */
-.gallery-section{padding: 30px 60px;}
+.gallery-section{padding: 30px 40px;}
 .film-strip {
   width: 100%;
   column-gap: 6px;
@@ -205,7 +205,8 @@ a{text-decoration:none;color:inherit}
 /* Mobile layout */
 @media(max-width:520px){
   .partners-section{padding-left: 30px;}
-  .gallery-section{padding-left: 30px;}
+  .gallery-section{padding-left: 0px; padding-right: 0px;}
+  .gallery-section p{padding-left: 30px;}
   .about-section{padding-left: 30px;}
   .activity-block{
     padding-left: 10px;
