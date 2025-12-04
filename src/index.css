@@ -7,6 +7,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+img {
+  pointer-events: none;       /* blocks drag + prevents interaction */
+  -webkit-user-drag: none;    /* blocks drag-save on Safari/Chrome */
+  -webkit-touch-callout: none;/* blocks long-press save on iOS */
+  user-select: none;          /* prevents text-selection save tricks */
+}
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
