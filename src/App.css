@@ -123,10 +123,7 @@ a{text-decoration:none;color:inherit}
 
 .map-link{
   color:var(--red);
-}
-
-.map-link:hover{
-  transform:scale(1.01);
+  font-weight:700;
 }
 
 /* PARTNERS */
