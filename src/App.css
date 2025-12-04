@@ -71,15 +71,6 @@ a{text-decoration:none;color:inherit}
 .body-text-bolder{font-size:24px;line-height:1.6;margin:10px 0;color:var(--dark);font-weight:bold;}
 .subtitle{font-size:20px;color:var(--dark);font-weight:bold;margin:0px 0px 0px 5px}
 
-.soon {
-  background: #e6e6e6;
-  color: #777;
-  border: 2px solid #bfbfbf;
-  cursor: not-allowed;
-  opacity: 0.6;
-  pointer-events: none;
-}
-
 /* ABOUT */
 .about-section{padding: 30px 40px 80px 40px;}
 
@@ -100,7 +91,7 @@ a{text-decoration:none;color:inherit}
 
 /* ACTIVITY SECTION */
 .activity-block{
-  padding:20px 40px;border-radius:6px;border:2px solid transparent;
+  padding:50px 40px 20px 40px;border-radius:6px;border:2px solid transparent;
 }
 .red{color:var(--red)}
 
@@ -149,16 +140,96 @@ a{text-decoration:none;color:inherit}
 /* COMMUNITY */
 .community-section{padding: 80px 20px 30px 20px;min-height: 100vh;}
 .community-inner{text-align:center}
-.chip-row{display:flex;justify-content:center;gap:12px;margin-top:18px; margin-bottom:42px;flex-wrap:wrap}
-.chip{width:110px;text-align: center;padding:8px 10px;border:2px solid var(--dark);font-weight:700;border-radius:6px;transition:transform .16s ease}
-.chip:hover{transform:scale(1.02);cursor: pointer;}
-.chip-active{border:2px solid var(--red);}
-.join-row{display:flex;justify-content:center;gap:18px;margin-top:18px}
-.join{padding:10px 18px;font-weight:700;border-radius:6px;transition:transform .16s ease}
-.join.primary{background:var(--red);color:var(--white)}
-.join.primary:hover{transform:scale(1.02);}
-.join.secondary{border:2px solid var(--red);color:var(--red);background:transparent}
-.join.secondary:hover{transform:scale(1.02);}
+.sports-row{display:flex;justify-content:center;gap:12px;margin-top:18px; margin-bottom:42px;flex-wrap:wrap}
+.sports{  padding: 14px 18px;
+  border: 2px solid var(--dark);
+  width: 110px;
+  border-radius: 6px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  transition: transform .18s ease, background .18s ease, color .18s ease;}
+.sports:hover{  background: var(--red);
+  border-color: var(--red);
+  color: white;
+}
+.sports-active{  background: var(--red);
+  border-color: var(--red);
+  color: white;
+}
+
+.sports.soon {
+  border-color: #ccc;
+  color: #aaa;
+  cursor: default;
+  pointer-events: none;
+}
+
+
+.social-row{display:flex;justify-content:center;gap:18px;margin-top:18px}
+
+.social-tile{
+  display: flex;
+  flex-direction: row;       /* icon + text side by side */
+  align-items: center;       /* vertically center icon with text */
+  gap: 12px;                 /* space between icon and text */
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--dark);
+  border: 2px solid var(--dark);
+  background: var(--white);
+  transition: transform .18s ease, background-color .18s ease, color .18s ease, border-color .18s ease;
+}
+
+.social-text{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+}
+
+.social-title{
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.social-sub{
+  font-size:12px;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.social-tile:hover{
+  background: var(--red);
+  border-color: var(--red);
+  color: white;
+}
+
+.social-tile:hover .social-sub{
+  color: #f5f5f5;
+}
+
+.whatsapp, .instagram, .strava{
+  background: none;
+  border-color: var(--dark);
+}
+
+.social-icon{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  font-size: 24px;
+  flex-shrink: 0;
+  color: var(--dark);
+  transition: color .18s ease;
+}
+
+.social-tile:hover .social-icon{
+  color: white;
+}
+
 
 /* FOOTER */
 .footer{display:flex;justify-content:center;align-items:center;padding:5px 10px;color:var(--white);font-weight:bold; background-color: var(--red);}
@@ -175,7 +246,7 @@ a{text-decoration:none;color:inherit}
   padding-top: 20px;
 }
 
-.film-track {
+.film-track {  
   display: flex;
   gap: 6px;
   flex-shrink: 0;
@@ -227,7 +298,7 @@ a{text-decoration:none;color:inherit}
   .nav{padding:12px 18px}
   .about-inner{grid-template-columns:1fr}
 
-  .chip-row{
+  .sports-row{
     display:grid;
     grid-template-columns: repeat(3, 1fr);
     gap:24px;
@@ -236,5 +307,10 @@ a{text-decoration:none;color:inherit}
     padding-right: 20px;
     margin-bottom:42px;
     justify-items:center;
+  }
+  .social-row{
+    flex-direction: column;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 }

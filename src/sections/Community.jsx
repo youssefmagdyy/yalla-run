@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Fade } from "react-awesome-reveal";
+import { FaWhatsapp, FaInstagram, FaStrava } from "react-icons/fa";
+
 const Community = () => {
   const [selectedActivity, setSelectedActivity] = useState("");
 
@@ -10,26 +12,61 @@ const Community = () => {
           <p className="body-text-bolder">
            Yalla pick your sport!
           </p>
-          <div className="chip-row">
+          <div className="sports-row">
             <span
               onClick={() => setSelectedActivity("Run")}
-              className={`chip ${selectedActivity === "Run" ? "chip-active" : ""}`}
+              className={`sports ${selectedActivity === "Run" ? "sports-active" : ""}`}
             >
               Running
             </span>
-            <span className="chip soon">Hiking</span>
-            <span className="chip soon">Football</span>
-            <span className="chip soon">Climbing</span>
-            <span className="chip soon">Cycling</span>
-            <span className="chip soon">Padel</span>
+            <span className="sports soon">Hiking</span>
+            <span className="sports soon">Football</span>
+            <span className="sports soon">Climbing</span>
+            <span className="sports soon">Cycling</span>
+            <span className="sports soon">Padel</span>
           </div>
           <p className="body-text-bold">
            STEP 2. Connect with us
           </p>
-          <div className="join-row">
-            <a href="https://chat.whatsapp.com/GBkoXP74vx73PNGCyxR5sV" className="join secondary">WhatsApp</a>
-            <a href="https://www.instagram.com/yalla.adeef?igsh=MXJpajRyandwNnNjZg==" className="join secondary">Instagram</a>
-            <a href="https://www.strava.com/clubs/1833378" className="join secondary">Strava</a>
+          <div className="social-row">
+            <a 
+              href="https://chat.whatsapp.com/GBkoXP74vx73PNGCyxR5sV"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-tile whatsapp"
+            >
+              <div className="social-icon"><FaWhatsapp /></div>
+              <div className="social-text">
+                <span className="social-title">WhatsApp</span>
+                <span className="social-sub">Group chat</span>
+              </div>
+            </a>
+
+            <a 
+              href="https://www.instagram.com/yalla.adeef?igsh=MXJpajRyandwNnNjZg=="
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-tile instagram"
+            >
+              <div className="social-icon"><FaInstagram /></div>
+              <div className="social-text">
+                <span className="social-title">Instagram</span>
+                <span className="social-sub">Latest updates</span>
+              </div>
+            </a>
+
+            <a 
+              href="https://www.strava.com/clubs/1833378"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-tile strava"
+            >
+              <div className="social-icon"><FaStrava /></div>
+              <div className="social-text">
+                <span className="social-title">Strava</span>
+                <span className="social-sub">Track activities</span>
+              </div>
+            </a>
           </div>
         </div>
         {selectedActivity === "Run" && 
