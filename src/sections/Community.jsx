@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Fade } from "react-awesome-reveal";
 const Community = () => {
   const [selectedActivity, setSelectedActivity] = useState("");
 
@@ -32,7 +32,9 @@ const Community = () => {
             <a href="https://www.strava.com/clubs/1833378" className="join secondary">Strava</a>
           </div>
         </div>
-        {selectedActivity === "Run" && <div className="activity-block">
+        {selectedActivity === "Run" && 
+        <Fade triggerOnce>
+        <div className="activity-block">
         <h2 className="section-title-sub red">Weekly Run</h2>
         <p className="subtitle">Ready? Steady.. Yalla!</p>
       <div className="activity-grid">
@@ -49,7 +51,8 @@ const Community = () => {
         <div className="activity-grid-item">4 km loop</div>
         <div className="activity-grid-item">All levels welcome</div>
       </div>
-      </div>}
+      </div>
+      </Fade>}
       </section>
     )
 }
