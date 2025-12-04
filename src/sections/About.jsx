@@ -18,20 +18,6 @@ const About = () => {
               </p>
             </Fade>
           </div>
-          {/* <div className="mosaic">
-            <div className="mosaic-col">
-              <div className="mosaic-item tall" style={{ backgroundImage: `url(${RUNNERS[1]})` }} />
-              <div className="mosaic-item" style={{ backgroundImage: `url(${RUNNERS[2]})` }} />
-            </div>
-
-            <div className="mosaic-col">
-              <div className="mosaic-item wide" style={{ backgroundImage: `url(${RUNNERS[3]})` }} />
-              <div className="mosaic-grid">
-                <div className="mosaic-item" style={{ backgroundImage: `url(${RUNNERS[4]})` }} />
-                <div className="mosaic-item" style={{ backgroundImage: `url(${RUNNERS[5]})` }} />
-              </div>
-            </div>
-          </div> */}
         </div>
       </section>
     )
