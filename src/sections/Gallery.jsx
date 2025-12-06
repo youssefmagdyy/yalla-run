@@ -17,12 +17,20 @@ const Gallery = () => {
           <div  className="film-strip">
             <div className="film-track">
               {RUNNERS.map((src, i) => (
-                <img key={i} className="film-frame" src={src} alt={i} />
+                <div
+                key={i}
+                className="film-frame"
+                style={{ backgroundImage: `url(${src})` }}
+              ></div>
               ))}
             </div>
             <div className="film-track">
               {RUNNERS.map((src, i) => (
-                <img key={"dup-" + i} className="film-frame" src={src} alt={"dup-" + i} />
+                <div
+                key={"dup-" + i}
+                className="film-frame"
+                style={{ backgroundImage: `url(${src})` }}
+              ></div>
               ))}
             </div>
           </div>

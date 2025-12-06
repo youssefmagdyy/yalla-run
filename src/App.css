@@ -249,22 +249,65 @@ a{text-decoration:none;color:inherit}
   padding-top: 20px;
 }
 
+.film-strip:hover .film-track {
+  animation-play-state: paused;
+}
+
 .film-track {  
   display: flex;
   gap: 6px;
+  overflow: visible; 
   flex-shrink: 0;
   animation: scroll-left 40s linear infinite;
 }
 
+
 .film-frame {
-  width: 300px;
+  width: 260px;
   height: 200px;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   border-radius: 6px;
   flex-shrink: 0;
-  transition: transform 220ms ease;
+transition:
+  transform 260ms ease-out,
+  margin 260ms ease-out;
+  display: block;
 }
+
+
+.film-frame:hover {
+  transform: scale(1.08) translateY(-6px);
+  margin-left: 20px;
+  margin-right: 20px;
+  z-index: 10;
+}
+
+/* 2) Add spacing between the two tracks so Track B's first frame has room */
+.film-track:first-child {
+  /* keep this equal or slightly larger than hover margin for safety */
+  margin-right: 20px;
+}
+
+/* 3) Give the last frame of the first track explicit right margin */
+.film-track:first-child .film-frame:last-child {
+  margin-right: 20px;
+  transition: margin 260ms ease-out, transform 260ms ease-out;
+}
+
+/* 4) Give the first frame of the second track explicit left margin */
+.film-track:last-child .film-frame:first-child {
+  margin-left: 20px;
+  transition: margin 260ms ease-out, transform 260ms ease-out;
+}
+
+/* 6) Also give neighbors a small smooth nudge (optional but looks nice) */
+.film-frame:hover ~ .film-frame,
+.film-frame:hover + .film-frame {
+  transition: transform 260ms ease-out, margin 260ms ease-out;
+}
+
 
 @keyframes scroll-left {
   from {
@@ -291,6 +334,10 @@ a{text-decoration:none;color:inherit}
   }
   .activity-grid-item.big{
     grid-column: span 1;
+  }
+
+  .activity-grid-item{
+      padding:12px 20px;
   }
 
   .nav{padding:12px 18px}
