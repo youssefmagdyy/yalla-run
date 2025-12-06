@@ -19,11 +19,26 @@ const Community = () => {
             >
               Running
             </span>
-            <span className="sports soon">Hiking</span>
-            <span className="sports soon">Football</span>
-            <span className="sports soon">Climbing</span>
-            <span className="sports soon">Cycling</span>
-            <span className="sports soon">Padel</span>
+            <div className="sports soon">
+              <span>Hiking</span>
+              <span className="soon-text">Coming soon</span>
+              </div>
+              <div className="sports soon">
+              <span>Football</span>
+              <span className="soon-text">Coming soon</span>
+              </div>
+              <div className="sports soon">
+              <span>Climbing</span>
+              <span className="soon-text">Coming soon</span>
+              </div>
+              <div className="sports soon">
+              <span>Cycling</span>
+              <span className="soon-text">Coming soon</span>
+              </div>
+              <div className="sports soon">
+              <span>Padel</span>
+              <span className="soon-text">Coming soon</span>
+              </div>
           </div>
           <p className="body-text-bold">
            STEP 2. Connect with us
@@ -72,11 +87,11 @@ const Community = () => {
         {selectedActivity === "Run" && 
         <Fade triggerOnce>
         <div className="activity-block">
-        <h2 className="section-title-sub red">Weekly Run</h2>
+        <h2 className="subsection-title-sub red">Weekly Run</h2>
         <p className="subtitle">Ready? Steady.. Yalla!</p>
       <div className="activity-grid">
         <div className="activity-grid-item big">Saturdays</div>
-        <div className="activity-grid-item">10:00 AM</div>
+        <div className="activity-grid-item">10:30 AM</div>
         <a
           href="https://www.google.com/maps/search/?api=1&query=Flâneur+Coffee+Club+Paris"
           target="_blank"
